@@ -1,29 +1,17 @@
-// import React from 'react';
-// import MehndiDesignApp from './MehndiDesignApp';
-// import HomePage from './HomePage';
 
-// function App() {
-//   return 
-//   // <MehndiDesignApp />;
-//   <HomePage/>
-// }
-
-// export default App;
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
-import MehndiGallery from './MehndiGallery';
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import DesignsList from './pages/DesignsList';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<MehndiGallery />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/" element={<DesignsList />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </Router>
   );

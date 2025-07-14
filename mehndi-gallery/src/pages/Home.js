@@ -6,6 +6,20 @@ import AddDesignForm from "./AddDesignForm";
 
 function Home() {
    const [designs, setDesigns] = useState([]);
+   const [selectedCategory, setSelectedCategory] = useState("All");
+
+   const categories = [
+    "All",
+    "Bridal",
+    "Simple",
+    "Arabic",
+    "Diwali",
+    "Holi",
+    "Rakhi",
+    "Savan Mehndi",
+    "Engagement"
+  ];
+  
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/designs")
@@ -19,20 +33,19 @@ function Home() {
       });
   }, []);
   
+  const filteredDesigns = designs.filter((item) => {
+    if (selectedCategory === "All") return true;
+  
+    const category = selectedCategory.toLowerCase();
+    const inTitle = item.title?.toLowerCase().includes(category);
+    const inTags = item.tags?.some(tag => tag.toLowerCase().includes(category));
+  
+    return inTitle || inTags;
+  });
+  
 
   return (
-    // <div className="p-4">
-    //   <h2 className="text-2xl font-bold mb-4">Mehndi Designs</h2>
-    //   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-    //     {designs.map((item) => (
-    //       <div key={item._id} className="border rounded-lg p-2 shadow">
-    //         <img src={item.url} alt={item.title} className="w-full h-48 object-cover rounded" />
-    //         <h3 className="mt-2 font-semibold">{item.title}</h3>
-    //         <p className="text-sm text-gray-500">{item.category}</p>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
+   
     <div className="font-sans text-gray-800">
     <nav className="bg-pink-100 px-6 py-3 flex justify-between items-center">
 <h1 className="text-xl font-bold text-pink-700">MehndiKala</h1>
@@ -47,7 +60,7 @@ function Home() {
 
   <section className="bg-gradient-to-br from-pink-100 via-orange-50 to-yellow-100 py-16 px-6 text-center">
     <h1 className="text-4xl md:text-5xl font-bold mb-4 text-pink-700">
-      Welcome to MehndiKala 🎨
+      Welcome to MehndiKala 
     </h1>
     <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-600">
       Explore beautiful Mehndi designs for every occasion — Bridal, Rakhi, Savan, and more.
@@ -62,13 +75,30 @@ function Home() {
   {/* 🔹 Categories */}
   <section className="py-10 px-4 max-w-5xl mx-auto">
     <h2 className="text-2xl font-bold mb-6 text-center">Categories</h2>
+   
+
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+  {/* //<div className="flex flex-wrap justify-center gap-2 mb-6"> */}
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setSelectedCategory(cat)}
+      className={`px-4 py-2 rounded-full border font-semibold transition ${
+        selectedCategory === cat
+          ? "bg-pink-600 text-white border-pink-600"
+          : "bg-white text-pink-700 border-pink-300 hover:bg-pink-100"
+      }`}
+    >
+      {cat}
+    </button>
+  ))}
+{/* </div> */}
+
+  </div>
+
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
-      {/* {categories.map((cat, index) => (
-        <div key={index} className="bg-white border p-4 rounded shadow hover:bg-pink-50 transition">
-          <p className="font-semibold text-pink-700">{cat}</p>
-        </div>
-      ))} */}
-      {designs.map((item) => (
+
+      {filteredDesigns.map((item) => (
           <div key={item._id} className="border rounded-lg p-2 shadow">
             <img src={item.url} alt={item.title} className="w-full h-48 object-cover rounded" />
             <h3 className="mt-2 font-semibold">{item.title}</h3>
@@ -80,25 +110,17 @@ function Home() {
 
   {/* 🖼 Gallery Preview */}
   <section className="py-10 px-4 max-w-6xl mx-auto">
-    <h2 className="text-2xl font-bold mb-6 text-center">Featured Designs</h2>
+    {/* <h2 className="text-2xl font-bold mb-6 text-center">Featured Designs</h2>
     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-      {/* {mehndiImages.slice(0, 6).map((img) => (
-        <div key={img.id} className="bg-white border rounded shadow hover:shadow-lg transition">
-          <img src={img.url} alt={img.title} className="h-48 w-full object-cover rounded-t" />
-          <div className="p-3">
-            <h3 className="font-semibold">{img.title}</h3>
-            <p className="text-sm text-gray-500">{img.category}</p>
-          </div>
-        </div>
-      ))} */}
-       {designs.map((item) => (
+      
+       {filteredDesigns.map((item) => (
           <div key={item._id} className="border rounded-lg p-2 shadow">
             <img src={item.url} alt={item.title} className="w-full h-48 object-cover rounded" />
             <h3 className="mt-2 font-semibold">{item.title}</h3>
             <p className="text-sm text-gray-500">{item.category}</p>
           </div>
         ))}
-    </div>
+    </div> */}
     <div className="text-center mt-6">
       <Link to="/gallery">
         <button className="px-5 py-2 border border-pink-600 text-pink-700 rounded hover:bg-pink-600 hover:text-white transition">
