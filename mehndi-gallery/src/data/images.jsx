@@ -1,0 +1,117 @@
+const mehndiImages = [
+    {
+      id: 1,
+      title: "Bridal Design 1",
+      category: "Bridal",
+      tags: ["mehndi", "mahendi", "bridal", "traditional", "arabic"],
+      url: "/mehndi/bridal1.jpg",
+    },
+    {
+      id: 2,
+      title: "Rakhi Special",
+      category: "Rakhi",
+      tags: ["mehndi", "mahendi", "rakhi", "simple", "traditional"],
+      url: "/mehndi/holi1.jpg",
+    },
+    {
+      id: 3,
+      title: "Diwali Glam",
+      category: "Diwali",
+      tags: ["mehndi", "mahendi", "diwali", "traditional", "savan"],
+      url: "/mehndi/diwali1.png",
+    },
+    {
+      id: 4,
+      title: "Simple Everyday Mehndi",
+      category: "Simple",
+      tags: ["mehndi", "mahendi", "simple", "traditional"],
+      url: "/mehndi/savan1.jpg",
+    },
+    {
+      id: 5,
+      title: "Holi Splash",
+      category: "Holi",
+      tags: ["mehndi", "mahendi", "holi", "savan", "arabic"],
+      url: "/mehndi/holi1.jpg",
+    },
+    {
+      id: 6,
+      title: "Savan Leaf Design",
+      category: "Savan",
+      tags: ["mehndi", "mahendi", "savan", "traditional", "simple"],
+      url: "/mehndi/savan1.jpg",
+    },
+    {
+      id: 7,
+      title: "Arabic Curve Pattern",
+      category: "Arabic",
+      tags: ["mehndi", "mahendi", "arabic", "bridal"],
+      url: "/mehndi/bridal1.jpg",
+    },
+    {
+      id: 8,
+      title: "Traditional Charm",
+      category: "Traditional",
+      tags: ["mehndi", "mahendi", "traditional", "simple", "bridal"],
+      url: "/mehndi/holi1.jpg",
+    },
+    {
+        id: 9,
+        title: "Bridal Design 1",
+        category: "Bridal",
+        tags: ["mehndi", "mahendi", "bridal", "traditional", "arabic"],
+        url: "/mehndi/bridal1.jpg",
+      },
+      {
+        id: 10,
+        title: "Rakhi Special",
+        category: "Rakhi",
+        tags: ["mehndi", "mahendi", "rakhi", "simple", "traditional"],
+        url: "/mehndi/holi1.jpg",
+      },
+      {
+        id: 11,
+        title: "Diwali Glam",
+        category: "Diwali",
+        tags: ["mehndi", "mahendi", "diwali", "traditional", "savan"],
+        url: "/mehndi/diwali1.png",
+      },
+      {
+        id: 12,
+        title: "Simple Everyday Mehndi",
+        category: "Simple",
+        tags: ["mehndi", "mahendi", "simple", "traditional"],
+        url: "/mehndi/savan1.jpg",
+      },
+      {
+        id: 13,
+        title: "Holi Splash",
+        category: "Holi",
+        tags: ["mehndi", "mahendi", "holi", "savan", "arabic"],
+        url: "/mehndi/holi1.jpg",
+      },
+      {
+        id: 14,
+        title: "Savan Leaf Design",
+        category: "Savan",
+        tags: ["mehndi", "mahendi", "savan", "traditional", "simple"],
+        url: "/mehndi/savan1.jpg",
+      },
+      {
+        id: 15,
+        title: "Arabic Curve Pattern",
+        category: "Arabic",
+        tags: ["mehndi", "mahendi", "arabic", "bridal"],
+        url: "/mehndi/bridal1.jpg",
+      },
+      {
+        id: 16,
+        title: "Traditional Charm",
+        category: "Traditional",
+        tags: ["mehndi", "mahendi", "traditional", "simple", "bridal"],
+        url: "/mehndi/holi1.jpg",
+      }
+  ];
+  
+  export default mehndiImages;
+  

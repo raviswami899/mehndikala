@@ -1,0 +1,32 @@
+.design-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px;
+    max-width: 300px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+  }
+  
+  .design-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .design-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .tags {
+    margin-top: 8px;
+  }
+  
+  .tag {
+    background-color: #eee;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-right: 6px;
+    font-size: 12px;
+  }
+  
