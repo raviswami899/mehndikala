@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
-const designSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  category: { type: String, required: true },
+const DesignSchema = new mongoose.Schema({
+  title: String,
+  category: String,
+  url: String,
   tags: [String],
-  url: { type: String, required: true }
+  isApproved: { type: Boolean, default: false },
+  createdAt: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Design', designSchema);
+module.exports = mongoose.model('Design', DesignSchema);
