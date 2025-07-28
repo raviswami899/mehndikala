@@ -7,13 +7,19 @@ const app = express();
 //const adminRoutes = require("./routes/adminRoutes");
 
 // Middleware setup
-const corsOptions = {
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: "*",
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true,
+// };
+//app.use(cors(corsOptions));
 app.use(express.json());
+// In your backend (e.g., Express):
+app.use(cors({
+  origin: 'https://mehndiidesign.netlify.app',
+  credentials: true
+}));
+
 
 // Connect to MongoDB
 connectDB();
