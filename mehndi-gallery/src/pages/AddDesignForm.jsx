@@ -47,6 +47,7 @@
 // AddDesignForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import axiosInstance from "../api/axiosInstance";
 
 const AddDesignForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ const AddDesignForm = ({ onClose }) => {
     };
 
     try {
-      await axios.post("http://localhost:8000/api/designs", payload);
+      await axiosInstance.post("/api/designs", payload);
       alert("Your design was submitted and is awaiting approval.");
       onClose(); // Don't add to UI until approved
     } catch (err) {
