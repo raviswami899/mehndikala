@@ -147,6 +147,7 @@ const AdminDashboard = () => {
       setLoading(false);
     }
   };
+//  await axiosInstance.post(`/admin/approve-design/${id}`);
 
   const approveDesign = async (id) => {
     try {
