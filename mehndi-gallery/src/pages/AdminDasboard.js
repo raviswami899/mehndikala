@@ -127,6 +127,7 @@
 // src/pages/AdminDashboard.jsx
 import React, { useEffect, useState } from "react";
 import axios from "../api/axiosInstance"; // make sure this instance is correctly configured
+import axiosInstance from "../api/axiosInstance";
 
 const AdminDashboard = () => {
   const [pendingDesigns, setPendingDesigns] = useState([]);
@@ -138,7 +139,7 @@ const AdminDashboard = () => {
 
   const fetchPendingDesigns = async () => {
     try {
-      const res = await axios.get("/admin/unapproved-designs"); // must match your backend
+      const res = await axiosInstance.get("/admin/unapproved-designs"); // must match your backend
       setPendingDesigns(res.data);
     } catch (err) {
       console.error("❌ Failed to fetch pending designs:", err);
@@ -151,7 +152,7 @@ const AdminDashboard = () => {
 
   const approveDesign = async (id) => {
     try {
-      await axios.put(`/admin/approve/${id}`);
+      await axiosInstance.put(`/admin/approve/${id}`);
       alert("✅ Design approved!");
       setPendingDesigns((prev) => prev.filter((d) => d._id !== id));
     } catch (err) {

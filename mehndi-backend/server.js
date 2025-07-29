@@ -15,10 +15,20 @@ const app = express();
 //app.use(cors(corsOptions));
 app.use(express.json());
 // In your backend (e.g., Express):
+// app.use(cors({
+//   origin: 'https://mehndiidesign.netlify.app',
+//   credentials: true
+// }));
+// Middleware
+app.use(express.json());
+
 app.use(cors({
-  origin: 'https://mehndiidesign.netlify.app',
+  origin: ['http://localhost:3000', 'https://mehndiidesign.netlify.app'],
   credentials: true
 }));
+
+app.options('*', cors()); // Handles preflight
+
 
 
 // Connect to MongoDB
